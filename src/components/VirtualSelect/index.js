@@ -70,7 +70,7 @@ class SuperSelect extends PureComponent {
 		const { children: arr } = this.props;
 		const children = this.turnChildren(arr);
 		// if (children && children.length > 0) {
-			this.formulaWidth();
+		this.formulaWidth();
 		// }
 	}
 
@@ -103,14 +103,16 @@ class SuperSelect extends PureComponent {
 			formulaMaxWidth = maxWidth || 10;
 		}
 		if (!dropdownMatchSelectWidth && !maxWidth) {
-			const children = this.turnChildren(arr2);
-			for (let i = 0; i < children.length; i++) {
-				const val = children[i].props.children;
-				const textWidth = this.getTextPixelWith(val);
-				arr.push(textWidth.toFixed(2));
-			}
-			if (arr.length > 0) {
-				formulaMaxWidth = Math.max(...arr);
+			if (arr2 && arr2.length > 0) {
+				const children = this.turnChildren(arr2);
+				for (let i = 0; i < children.length; i++) {
+					const val = children[i].props.children;
+					const textWidth = this.getTextPixelWith(val);
+					arr.push(textWidth.toFixed(2));
+				}
+				if (arr.length > 0) {
+					formulaMaxWidth = Math.max(...arr);
+				}
 			}
 		}
 

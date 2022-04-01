@@ -1,6 +1,6 @@
 {
   "name": "@tntd/ant3-virtual-select",
-  "version": "1.1.3",
+  "version": "1.1.4",
   "description": "基于ant3研发的高性能select虚拟滚动",
   "main": "lib/index.js",
   "scripts": {
