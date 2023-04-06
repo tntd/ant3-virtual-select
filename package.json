@@ -1,7 +1,7 @@
 {
   "name": "@tntd/ant3-virtual-select",
-  "version": "1.1.7",
-  "description": "基于ant3研发的高性能select虚拟滚动",
+  "version": "2.0.1",
+  "description": "tntd,基于ant3研发的高性能select虚拟滚动",
   "main": "lib/index.js",
   "scripts": {
     "start": "webpack-dev-server",
@@ -10,6 +10,7 @@
   },
   "peerDependencies": {
     "antd": ">=3.20.1",
+    "tntd": ">=2.0.1",
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
   },

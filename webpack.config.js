@@ -34,13 +34,21 @@ let webpackConfig = {
 								{ loose: true }
 							],
 							[
-								"import",
-								{
-									libraryName: "antd",
-									libraryDirectory: "lib",
-									style: true
-								}
-							],
+                                "import",
+                                {
+                                    "libraryName": "antd",
+                                    "libraryDirectory": "es",
+                                    "style": true // `style: true` 会加载 less 文件
+                                }
+                            ],
+                            [
+                                "import",
+                                {
+                                    "libraryName": "tntd",
+                                    "libraryDirectory": "es"
+                                },
+                                "tntd"
+                            ],
 							"@babel/plugin-transform-runtime"
 						]
 					}
@@ -54,7 +62,10 @@ let webpackConfig = {
 					{
 						loader: "less-loader",
 						options: {
-							javascriptEnabled: true
+							javascriptEnabled: true,
+                            modifyVars: {
+                                hack: 'true; @import "~tntd/themes/default/variables.less";'
+                            }
 						}
 					}
 				]

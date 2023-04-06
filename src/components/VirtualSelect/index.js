@@ -1,5 +1,5 @@
 import React, { PureComponent } from "react";
-import { Select, Empty } from "antd";
+import { Select, Empty } from "tntd";
 import DropDownWrap from "./DropDownWrap";
 
 // 页面实际渲染的下拉菜单数量，实际为 2 * ITEM_ELEMENT_NUMBER
@@ -478,7 +478,7 @@ class SuperSelect extends PureComponent {
     			ref={ele => (this.select = ele)}
     			dropdownRender={(menu, props) => {
     				if (this.allList.length === 0) {
-    					return <div style={{ padding: "5px 12px" }}><Empty image={Empty.PRESENTED_IMAGE_SIMPLE} /></div>;
+    					return <div style={{  margin:"5px auto" }}><Empty  size="mini"/></div>;
     				}
 
     				return (
