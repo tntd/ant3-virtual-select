@@ -9,7 +9,7 @@
     "publish": "sh publish.sh"
   },
   "peerDependencies": {
-    "antd": ">=3.20.1",
+    "antd": ">=3.20.1 && <4.0.0",
     "tntd": ">=2.0.1",
     "react": ">=16.8.0",
     "react-dom": ">=16.8.0"
