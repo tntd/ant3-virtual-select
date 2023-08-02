@@ -1,6 +1,6 @@
 {
   "name": "@tntd/ant3-virtual-select",
-  "version": "2.0.1",
+  "version": "2.0.2",
   "description": "tntd,基于ant3研发的高性能select虚拟滚动",
   "main": "lib/index.js",
   "scripts": {
