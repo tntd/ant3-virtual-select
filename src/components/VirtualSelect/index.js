@@ -167,10 +167,15 @@ class SuperSelect extends PureComponent {
     	height: this.ITEM_HEIGHT
     });
 
+    preventEvent = (e) => {
+        e.preventDefault();
+    }
     addEvent = () => {
     	this.scrollEle = document.querySelector(`.${this.dropdownClassName}`);
     	// 下拉菜单未展开时元素不存在
     	if (!this.scrollEle) return;
+
+        this.scrollEle.addEventListener('mousedown',this.preventEvent, false);
 
     	this.scrollEle.addEventListener("scroll", this.onScroll, false);
     	this.inputEle = document.querySelector(`#${this.id}`);
@@ -418,6 +423,7 @@ class SuperSelect extends PureComponent {
     removeEvent = () => {
     	if (!this.scrollEle) return;
     	this.scrollEle.removeEventListener("scroll", this.onScroll, false);
+        this.scrollEle.removeEventListener('mousedown',this.preventEvent,false);
     	if (!this.inputEle) return;
     	this.inputEle.removeEventListener("keydown", this.onKeyDown, false);
     };
