@@ -144,9 +144,26 @@ class SuperSelect extends PureComponent {
     			children: arr || [],
     			filterChildren: null
     		});
-    		if (arr && arr.length > 0) {
-    			this.formulaWidth();
-    		}
+
+			 this.setState(
+                {
+                    children: arr || [],
+                    filterChildren: null
+                },
+                () => {
+                    if (arr && arr.length > 0) {
+                        // 设置下拉列表显示数据
+                        if (!value) {
+                            this.scrollTop = 0;
+                            this.scrollEle && this.scrollEle.scrollTo(0, 0);
+                            this.setSuperDrowDownMenu(true);
+                        }
+						this.formulaWidth();
+						this.removeEvent();
+						this.addEvent();
+                    }
+                }
+            );
     	}
     	if (prevProps.value !== value) {
     		// 更新时设置默认 value
