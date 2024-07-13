@@ -98,7 +98,10 @@ class SuperSelect extends PureComponent {
     	// 获取dom设置宽度
     	const { children: arr2, dropdownMatchSelectWidth = true, maxWidth } = this.props;
     	const selectDom = document.getElementById(this.id);
-    	const selectWidth = selectDom.clientWidth || selectDom.offsetWidth;
+		let selectWidth
+		if(selectDom){
+			selectWidth = selectDom.clientWidth || selectDom.offsetWidth;
+		}
     	let arr = [];
     	let formulaMaxWidth = 10;
     	if (!dropdownMatchSelectWidth) {
